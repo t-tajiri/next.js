@@ -330,6 +330,14 @@ export interface ExperimentalConfig {
    * Enables the bundling of node_modules packages (externals) for pages server-side bundles.
    */
   bundlePagesExternals?: boolean
+
+  /**
+   * Add `"crossorigin"` attribute to generated `<script>` elements that are only first scripts.
+   *
+   *
+   * @see [`crossorigin` attribute documentation](https://developer.mozilla.org/docs/Web/HTML/Attributes/crossorigin)
+   */
+  onlyFirstPartyCrossOrigin?: false | 'anonymous' | 'use-credentials'
 }
 
 export type ExportPathMap = {
@@ -770,6 +778,7 @@ export const defaultConfig: NextConfig = {
     typedRoutes: false,
     instrumentationHook: false,
     bundlePagesExternals: false,
+    onlyFirstPartyCrossOrigin: false,
   },
 }
 

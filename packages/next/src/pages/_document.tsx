@@ -184,6 +184,7 @@ function getScripts(
     assetQueryString,
     disableOptimizedLoading,
     crossOrigin,
+    onlyFirstPartyCrossOrigin,
   } = context
 
   const normalScripts = files.allFiles.filter((file) => file.endsWith('.js'))
@@ -199,7 +200,9 @@ function getScripts(
         nonce={props.nonce}
         async={!isDevelopment && disableOptimizedLoading}
         defer={!disableOptimizedLoading}
-        crossOrigin={props.crossOrigin || crossOrigin}
+        crossOrigin={
+          props.crossOrigin || crossOrigin || onlyFirstPartyCrossOrigin
+        }
       />
     )
   })

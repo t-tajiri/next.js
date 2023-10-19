@@ -497,6 +497,8 @@ export async function exportAppImpl(
     // Exported pages do not currently support dynamic HTML.
     supportsDynamicHTML: false,
     crossOrigin: nextConfig.crossOrigin || '',
+    onlyFirstPartyCrossOrigin:
+      nextConfig.experimental.onlyFirstPartyCrossOrigin || '',
     optimizeCss: nextConfig.experimental.optimizeCss,
     nextConfigOutput: nextConfig.output,
     nextScriptWorkers: nextConfig.experimental.nextScriptWorkers,

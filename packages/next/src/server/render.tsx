@@ -279,6 +279,7 @@ export type RenderOptsPartial = {
   serverActionsBodySizeLimit?: SizeLimit
   customServer?: boolean
   crossOrigin?: 'anonymous' | 'use-credentials' | '' | undefined
+  onlyFirstPartyCrossOrigin?: 'anonymous' | 'use-credentials' | '' | undefined
   images: ImageConfigComplete
   largePageDataBytes?: number
   isOnDemandRevalidate?: boolean
@@ -1501,6 +1502,7 @@ export async function renderToHTMLImpl(
     headTags: documentResult.headTags,
     styles: documentResult.styles,
     crossOrigin: renderOpts.crossOrigin,
+    onlyFirstPartyCrossOrigin: renderOpts.onlyFirstPartyCrossOrigin,
     optimizeCss: renderOpts.optimizeCss,
     optimizeFonts: renderOpts.optimizeFonts,
     nextConfigOutput: renderOpts.nextConfigOutput,

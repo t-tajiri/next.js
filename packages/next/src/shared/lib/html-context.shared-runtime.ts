@@ -38,6 +38,7 @@ export type HtmlProps = {
   styles?: React.ReactElement[] | React.ReactFragment
   head?: Array<JSX.Element | null>
   crossOrigin?: 'anonymous' | 'use-credentials' | '' | undefined
+  onlyFirstPartyCrossOrigin?: 'anonymous' | 'use-credentials' | '' | undefined
   optimizeCss?: any
   optimizeFonts?: FontConfig
   nextConfigOutput?: 'standalone' | 'export'
